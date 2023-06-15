@@ -11,9 +11,6 @@ app.use(express.json());
 
 router.get('/', async (req, res) => {
 	var user_id = req.query.tagId;
-	if (!user_id){
-		res.redirect('trikuxabi.eus');
-	}
 	var data = await service.getRecordById("music", user_id);
 	res.json(data);
 
@@ -22,9 +19,6 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
 	
 	var data = req.query;
-	if (!data){
-		res.redirect('trikuxabi.eus');
-	}
 	var new_doc = {
 		"song": data.song,
 		"position": data.position
