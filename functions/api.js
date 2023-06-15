@@ -23,7 +23,7 @@ exports.handler = async function (event, context) {
 router.get('/', (req, res) => {
 	// res.json(data);
 
-	res.json(process.env.XABI_API);
+	res.json(JSON.stringify(process.env.XABI_API);
 
 });
 
