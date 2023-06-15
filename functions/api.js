@@ -9,14 +9,16 @@ app.use(express.json());
 
 
 router.get('/', (req, res) => {
+	
 	// res.json(data);
 
-	res.json(JSON.stringify(process.env.XABI_API));
+	res.send(process.env.XABI_API);
 
 });
 
 router.post('/', (req, res) => {
 	
+	/*
 	const jsonObj = req.query;
 
 	fs.writeFile(
@@ -31,6 +33,10 @@ router.post('/', (req, res) => {
 	);
 
 	res.json(jsonObj);
+	*/
+
+
+
 })
 
 app.use('/', router);
