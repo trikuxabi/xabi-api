@@ -7,8 +7,24 @@ const data = require("../json/peek.json");
 
 app.use(express.json());
 
+
+/*
+exports.handler = async function (event, context) {
+  const value = process.env.XABI_API;
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: `Value of MY_IMPORTANT_VARIABLE is ${value}.` }),
+  };  
+};
+*/
+
+
 router.get('/', (req, res) => {
-	res.json(data);
+	// res.json(data);
+
+	res.json(process.env.XABI_API);
+
 });
 
 router.post('/', (req, res) => {
