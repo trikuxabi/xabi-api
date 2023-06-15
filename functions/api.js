@@ -10,8 +10,8 @@ app.use(express.json());
 
 
 router.get('/', async (req, res) => {
-	
-	var data = await service.listRecords("music");
+	var user_id = req.query.tagId;
+	var data = await service.getRecordById("music", user_id);
 	res.json(data);
 
 });
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
 	
 	var data = req.query;
-	var created = await service.createRecord("music", data);
+	var created = await service.updateRecord("music", user_id, data.id);
 	res.json(created);
 
 })
