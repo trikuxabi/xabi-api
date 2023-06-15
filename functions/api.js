@@ -21,9 +21,23 @@ router.post('/', async (req, res) => {
 	var data = req.query;
 	var new_doc = {
 		"song": data.song,
-		"position": data.position
+		"position": data.position,
+		"email": data.email
 	};
 	var created = await service.updateRecord("music", data.id, new_doc);
+	res.json(created);
+
+})
+
+router.post('/newuser', async (req, res) => {
+	
+	var data = req.query;
+	var new_doc = {
+		"song": data.song,
+		"position": data.position,
+		"email": data.email
+	};
+	var created = await service.createRecord("music", new_doc);
 	res.json(created);
 
 })
