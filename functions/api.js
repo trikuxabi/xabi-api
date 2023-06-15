@@ -9,14 +9,14 @@ const service = new FaunaService(process.env.DB_KEY);
 app.use(express.json());
 
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
 	
 	var data = await service.listRecords("music");
 	res.json(data);
 
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
 	
 	var data = req.query;
 	var created = await service.createRecord("music", data);
