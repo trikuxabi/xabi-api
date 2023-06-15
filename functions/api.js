@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
 	
 	var data = req.query;
-	var created = await service.updateRecord("music", user_id, data.id);
+	var created = await service.updateRecord("music", data.id, data);
 	res.json(created);
 
 })
