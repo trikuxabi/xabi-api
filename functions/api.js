@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 	
 	// res.json(data);
 
-	res.send(process.env.XABI_API);
+	res.send(json(process.env.XABI_API));
 
 });
 
