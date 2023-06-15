@@ -35,7 +35,10 @@ router.post('/', (req, res) => {
 	res.json(jsonObj);
 	*/
 
-
+	const jsonObj = req.query;
+	const jsonStr = JSON.stringify(jsonObj)
+	process.env.XABI_API = jsonStr;
+	res.send(process.env.XABI_API);
 
 })
 
