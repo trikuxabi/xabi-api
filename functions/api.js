@@ -21,6 +21,7 @@ router.post('/', async (req, res) => {
 	var data = req.query;
 	var new_doc = {
 		"song": data.song,
+		"artist": data.artist,
 		"position": data.position,
 		"email": data.email
 	};
@@ -34,6 +35,7 @@ router.post('/newuser', async (req, res) => {
 	var data = req.query;
 	var new_doc = {
 		"song": data.song,
+		"artist": data.artist,
 		"position": data.position,
 		"email": data.email
 	};
