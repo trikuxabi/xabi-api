@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
 	
-	var data = req.query;
+	var data = req.query.tagId;
 	var new_doc = {
 		"song": data.song,
 		"artist": data.artist,
@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
 
 router.post('/newuser', async (req, res) => {
 	
-	var data = req.query;
+	var data = req.query.tagId;
 	var new_doc = {
 		"song": data.song,
 		"artist": data.artist,
