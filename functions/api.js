@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
 	var created = await service.updateRecord("music", data.tagId, new_doc);
 	res.json(created);
 
-})
+});
 
 router.post('/newuser', async (req, res) => {
 	
@@ -42,7 +42,7 @@ router.post('/newuser', async (req, res) => {
 	var created = await service.createRecord("music", new_doc);
 	res.json(created);
 
-})
+});
 
 app.use('/', router);
 
