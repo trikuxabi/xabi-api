@@ -6,6 +6,8 @@ const fs = require("fs");
 const FaunaService = require('@brianmmdev/faunaservice');
 const service = new FaunaService(process.env.DB_KEY);
 
+import { parse } from 'querystring'
+
 app.use(express.json());
 
 
