@@ -6,7 +6,6 @@ const fs = require("fs");
 const FaunaService = require('@brianmmdev/faunaservice');
 const service = new FaunaService(process.env.DB_KEY);
 
-import { parse } from 'querystring'
 
 app.use(express.json());
 
@@ -19,11 +18,11 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-	let data = {}
+	let data = {};
 	try{
-		data = JSON.parse(req.body)
+		data = JSON.parse(req.body);
 	} catch (e) {
-		data = parse (req.body)
+		res.json(e);
 	}
 	var new_doc = {
 		"song": data.song,
