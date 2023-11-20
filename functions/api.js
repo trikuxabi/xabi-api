@@ -30,8 +30,7 @@ router.post('/', async (req, res) => {
 		var created = await service.updateRecord("music", data.tagId, new_doc);
 		res.json(created);
 	} catch (e) {
-		data = e;
-		res.json(data)
+		res.json(e);
 	}
 	
 });
