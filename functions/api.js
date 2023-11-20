@@ -32,8 +32,8 @@ router.post('/', async (req, res) => {
 	} catch (e) {
 		return {
 			statusCode: 200,
-			body: e;
-		}
+			body: e
+		};
 	}
 	
 });
