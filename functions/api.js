@@ -18,10 +18,9 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-	let data = {};
+	
 	try{
-		//data = JSON.parse(req.body);
-		data = req.body;
+		var data = JSON.parse(req.body);
 		var new_doc = {
 			"song": data.song,
 			"artist": data.artist,
