@@ -23,6 +23,7 @@ router.post('/', async (req, res) => {
 		var data = req.body;
 		var new_doc = {
 			"song": data.song,
+			"album": data.album,
 			"artist": data.artist,
 			"position": data.position,
 			"email": data.email
@@ -41,6 +42,7 @@ router.post('/newuser', async (req, res) => {
 	var data = req.body;
 	var new_doc = {
 		"song": data.song,
+		"album": data.album,
 		"artist": data.artist,
 		"position": data.position,
 		"email": data.email
