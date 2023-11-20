@@ -21,17 +21,18 @@ router.post('/', async (req, res) => {
 	let data = {};
 	try{
 		data = JSON.parse(req.body);
+		var new_doc = {
+			"song": data.song,
+			"artist": data.artist,
+			"position": data.position,
+			"email": data.email
+		};
+		var created = await service.updateRecord("music", data.tagId, new_doc);
+		res.json(created);
 	} catch (e) {
-		res.json(e);
+		return new Response(e, res);
 	}
-	var new_doc = {
-		"song": data.song,
-		"artist": data.artist,
-		"position": data.position,
-		"email": data.email
-	};
-	var created = await service.updateRecord("music", data.tagId, new_doc);
-	res.json(created);
+	
 });
 
 router.post('/newuser', async (req, res) => {
