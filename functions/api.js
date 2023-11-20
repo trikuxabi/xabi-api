@@ -21,10 +21,11 @@ router.post('/', async (req, res) => {
 	var data = req.query;
 	var new_doc = {
 		"song": data.song,
+		"artist": data.artist,
 		"position": data.position,
 		"email": data.email
 	};
-	var created = await service.updateRecord("music", data.id, new_doc);
+	var created = await service.updateRecord("music", data.tagId, new_doc);
 	res.json(created);
 
 })
@@ -34,6 +35,7 @@ router.post('/newuser', async (req, res) => {
 	var data = req.query;
 	var new_doc = {
 		"song": data.song,
+		"artist": data.artist,
 		"position": data.position,
 		"email": data.email
 	};
